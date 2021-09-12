@@ -24,7 +24,7 @@ $(function(){
 
     //送信
     $('form').submit(function() {
-        var date = $("#date input").val();
+        var date = $("#date").val();
         var category = $("#category option:selected").val();
         var amount = $("#amount option:selected").val();
             
