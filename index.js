@@ -16,4 +16,7 @@ $(function(){
         
         return false;
     });
+
+    require('dotenv').config();
+    console.log(process.env.LIFF_ID);
 });
