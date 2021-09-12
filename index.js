@@ -17,9 +17,8 @@ $(function(){
     });
 
     var $date = $("#date");
-    $date.on("input", function(e){
-        var input_date = $date.val();
-        console.log(input_date);
+    $date.on("input", function(event){
+        console.log($(this).val());
     });
 
 
