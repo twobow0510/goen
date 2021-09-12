@@ -19,7 +19,7 @@ $(function(){
 
     //送信
     $('form').submit(function() {
-        var date = "2021/10/10";
+        var date = $("#date input").val();
         var category = $("#category option:selected").val();
         var amount = $("#amount option:selected").val();
             
