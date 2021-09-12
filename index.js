@@ -1,11 +1,11 @@
 $(function(){
     //注文リストにインデックス追加
-    var order_list = $(".order-list-group-item");
+    var $order_list = $(".order-list-group-item");
     var order_items = 1;
     $("#add-item").click(function() {
         order_items += 1;
         if (order_items < 6) {
-            order_list.clone(true).insertAfter(order_list);
+            $order_list.clone(true).insertAfter($order_list);
             $(".order-list-group-item").each(function(index) {
                 $(this).find("p:first-child").text("注文" + (index + 1));
             });
@@ -14,6 +14,12 @@ $(function(){
         } else {
             window.alert("商品追加は最大5つまでです。");
         }
+    });
+
+    var $date = $("#date");
+    $date.on("input", function(e){
+        var input_date = $date.val();
+        console.log(input_date);
     });
 
 
