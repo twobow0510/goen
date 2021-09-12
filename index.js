@@ -1,12 +1,24 @@
 $(function(){
     //注文リストにインデックス追加
-    $(".order-list-group-item").each(function(index){
-        //console.log(index);
-        $(this).find("ul li:first-child").text("注文" + (index + 1));
-    });    
+    var order_list = $(".order-list-group-item");
+    var order_items = 1;
+    $("#add-item").click(function() {
+        order_items += 1;
+        if (order_items < 6) {
+            order_list.clone(true).insertAfter(order_list);
+            $(".order-list-group-item").each(function(index) {
+                $(this).find("p:first-child").text("注文" + (index + 1));
+            });
+
+            $("html, body").animate({ scrollTop: 9999 }, 1000);
+        } else {
+            window.alert("商品追加は最大5つまでです。");
+        }
+    });
+
 
     //送信
-    $('form').submit(function(){
+    $('form').submit(function() {
         var date = "2021/10/10";
         var category = $("#category option:selected").val();
         var amount = $("#amount option:selected").val();
