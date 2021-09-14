@@ -32,7 +32,7 @@ $(function(){
         var date = $("#date").val();
         var order_nums = $(".order-list-group-item").length;
         var msg = "";
-        
+
         msg += "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n";
         msg += `納品日：${date}`;
         msg += "\nーーーーーーーーーーー\n"
@@ -53,7 +53,8 @@ $(function(){
             ーーーーーーーーーーー
             `;
             
-            send_text(msg.replace(/[\s|\t]/g, ""));
+            //send_text(msg.replace(/[\s|\t]/g, ""));
+            send_text(msg);
         }
         return false;
     });
