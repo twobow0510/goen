@@ -1,8 +1,8 @@
 $(function(){
+    /*
     $.getJSON("https://drive.google.com/file/d/1dqYnoJHw9AOxyWK4_5P3f6rFwgDXWhFV/export?format=json", function(json){
         console.log(json);  
-    });
-    
+    });*/
 
     //注文リストにインデックス追加
     var $order_list = $(".order-list-group-item");
@@ -39,13 +39,13 @@ $(function(){
         `;
 
         for (var i=1; i<order_nums+1; i++) {
-            var category_price = $(`#category${i} option:selected`).text();
+            var category_price = $(`"#category${i} option:selected"`).text();
             console.log(category_price);
             var category_price_array = category_price.split(" - ");
             var category = category_price_array[0];
             var price = category_price_array[1];
             console.log(price);
-            var amount = $(`#amount${i} option:selected`).val();
+            var amount = $(`"#amount${i} option:selected"`).val();
 
             msg += `注文${i}
             ー種類：${category}
