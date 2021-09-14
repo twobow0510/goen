@@ -40,7 +40,8 @@ $(function(){
 
         for (var i=1; i<order_nums+1; i++) {
             var category_price = $(`#category${i} option:selected`).val();
-            var category_price_array = category_price.split(" - ¥");
+            console.log(category_price);
+            var category_price_array = category_price.split(" - ");
             var category = category_price_array[0];
             var price = category_price_array[1];
             console.log(price);
@@ -49,7 +50,7 @@ $(function(){
             msg += `注文${i}
             ー種類：${category}
             ー個数：${amount}
-            ー単価：¥${price}
+            ー単価：${price}
             ーーーーーーーーーーー
             `;
             
