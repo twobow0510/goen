@@ -39,7 +39,7 @@ $(function(){
         `;
 
         for (var i=1; i<order_nums+1; i++) {
-            var category_price = $(`#category${i} option:selected`).val();
+            var category_price = $(`#category${i} option:selected`).text();
             console.log(category_price);
             var category_price_array = category_price.split(" - ");
             var category = category_price_array[0];
