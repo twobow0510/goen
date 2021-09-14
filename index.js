@@ -51,6 +51,6 @@ $(function(){
             //send_text(msg.replace(/[\s|\t]/g, ""));
             send_text(msg);
         }
-        return false;
+        //return false;
     });
 });
