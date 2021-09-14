@@ -1,4 +1,9 @@
 $(function(){
+    $.getJSON("https://drive.google.com/file/d/1dqYnoJHw9AOxyWK4_5P3f6rFwgDXWhFV/export?format=json", function(json){
+        console.log(json);  
+    });
+    
+
     //注文リストにインデックス追加
     var $order_list = $(".order-list-group-item");
     var order_items = 1;
@@ -25,12 +30,27 @@ $(function(){
     //送信
     $('form').submit(function() {
         var date = $("#date").val();
-        var category = $("#category option:selected").val();
-        var amount = $("#amount option:selected").val();
+        var order_nums = $(".order-list-group-item").length;
+
+        var msg = "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n"
+        msg += `納品日：${date}`;
+        msg += "\nーーーーーーーーーーーー\n";
+
+        for (var i=1; i<order_nums+1; i++) {
+            var category_price = $(`#category${i} option:selected`).val();
+            var category_price_array = category_price.split(" - ");
+            var category = category_price_array[0];
+            var price = category_price_array[1];
+            var amount = $(`#amount${i} option:selected`).val();
+
+            msg += `注文${i}`;
+            msg += `ー種類：${category}`;
+            msg += `ー個数：${amount}`;
+            msg += `ー単価：${price}`;
+            msg += "\nーーーーーーーーーーーー\n";
             
-        var msg = `納品日：${date}\n種類：${category}\n個数：${amount}`;
-        send_text(msg);
-        
+            send_text(msg);
+        }
         return false;
     });
 });
