@@ -31,10 +31,11 @@ $(function(){
     $('form').submit(function() {
         var date = $("#date").val();
         var order_nums = $(".order-list-group-item").length;
-
-        var msg = "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n";
-        var msg += `納品日：${date}`;
-        var msg += "\nーーーーーーーーーーー\n"
+        var msg = "";
+        
+        msg += "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n";
+        msg += `納品日：${date}`;
+        msg += "\nーーーーーーーーーーー\n"
 
         for (var i=1; i<order_nums+1; i++) {
             var category_price = $(`"#category${i} option:selected"`).text();
