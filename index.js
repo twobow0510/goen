@@ -1,9 +1,4 @@
 $(function(){
-    /*
-    $.getJSON("https://drive.google.com/file/d/1dqYnoJHw9AOxyWK4_5P3f6rFwgDXWhFV/export?format=json", function(json){
-        console.log(json);  
-    });*/
-
     //注文リストにインデックス追加
     var $order_list = $(".order-list-group-item");
     var order_items = 1;
@@ -35,7 +30,7 @@ $(function(){
 
         msg += "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n";
         msg += `納品日：${date}`;
-        msg += "\nーーーーーーーーーーー\n"
+        msg += "\nーーーーーーーーーーー\n";
 
         for (var i=1; i<order_nums+1; i++) {
             var category_price = $(`"#category${i} option:selected"`).text();
