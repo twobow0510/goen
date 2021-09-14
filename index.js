@@ -32,11 +32,9 @@ $(function(){
         var date = $("#date").val();
         var order_nums = $(".order-list-group-item").length;
 
-        var msg = `ご注文内容
-        ＝＝＝＝＝＝＝＝＝＝＝
-        納品日：${date}
-        ーーーーーーーーーーー
-        `;
+        var msg = "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n";
+        var msg += '納品日：${date}`;
+        var msg += "ーーーーーーーーーーー\n"
 
         for (var i=1; i<order_nums+1; i++) {
             var category_price = $(`"#category${i} option:selected"`).text();
@@ -54,7 +52,7 @@ $(function(){
             ーーーーーーーーーーー
             `;
             
-            send_text(msg);
+            send_text(msg.replace(/[\s|\t]/g, ""));
         }
         return false;
     });
