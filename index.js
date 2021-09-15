@@ -23,7 +23,7 @@ $(function(){
 
 
     //送信
-    $('#form').submit(function() {
+    $("form").submit(function() {
     //$("#submit").click(function() {
         var date = $("#date").val();
         var order_nums = $(".order-list-group-item").length;
@@ -42,20 +42,11 @@ $(function(){
             console.log(price);
             var amount = $(`"#amount${i} option:selected"`).val();
             
-            msg += `注文${i}
-            ー種類：${category}
-            ー個数：${amount}
-            ー単価：${price}
-            ーーーーーーーーーーー
-            `;
-            
+            msg += `注文${i}\nー種類：${category}\nー個数：${amount}\nー単価：${price}`;
+            msg += "ーーーーーーーーーーー";
         }
-        
-        //window.alert(msg);
-        //console.log(msg.replace(/\t/g, ""));
         //send_text(msg.replace(/\t/g, ""));
         send_text(msg);
-
         return false;
     });
 });
