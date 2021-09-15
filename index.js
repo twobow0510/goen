@@ -8,6 +8,10 @@ $(function(){
             $order_list.clone(true).insertAfter($order_list);
             $(".order-list-group-item").each(function(index) {
                 $(this).find("p:first-child").text("注文" + (index + 1));
+                $(this).find("p.category label").attr({"for": `category${index+1}`});
+                $(this).find("p.category select").attr({"for": `category${index+1}`, "name": `category${index+1}`});
+                $(this).find("p.amount label").attr({"for": `amount${index+1}`});
+                $(this).find("p.amount select").attr({"for": `amount${index+1}`, "name": `amount${index+1}`});
             });
 
             $("html, body").animate({ scrollTop: 9999 }, 1000);
@@ -30,12 +34,8 @@ $(function(){
         //var msg = "";
 
         var msg1 = `ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n納品日：${date}\nーーーーーーーーーーー\n`;
-        /*
-        msg += "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n";
-        msg += `"納品日：${date}""`;
-        msg += "\nーーーーーーーーーーー\n";        
-        */
-        var msg_array = [];
+        //var msg_array = [];
+        var msg2 = "";
         for (var i=1; i<order_nums+1; i++) {
             var category_price = $(`#category${i} option:selected`).text();
             //console.log(category_price);
@@ -45,12 +45,10 @@ $(function(){
             //console.log(price);
             var amount = $(`#amount${i} option:selected`).val();
             
-            var msg2 = `注文${i}\nー種類：${category}\nー個数：${amount}\nー単価：${price}\nーーーーーーーーーーー`;
-            msg_array.push(msg2);
+            msg2 += `注文${i}\nー種類：${category}\nー個数：${amount}\nー単価：${price}\nーーーーーーーーーーー\n`;
+            //msg_array.push(msg2);
         }
-        
-        //send_text(msg.replace(/\t/g, ""));
-        send_text(msg1 + msg_array[0]);
+        send_text(msg1 + msg2);
         return false;
     });
 });
