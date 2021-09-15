@@ -23,7 +23,8 @@ $(function(){
 
 
     //送信
-    $('form').submit(function() {
+    //$('form').submit(function() {
+    $("#form").click(function() {
         var date = $("#date").val();
         var order_nums = $(".order-list-group-item").length;
         var msg = "";
@@ -51,6 +52,6 @@ $(function(){
             //send_text(msg.replace(/[\s|\t]/g, ""));
             send_text(msg);
         }
-        //return false;
+        return false;
     });
 });
