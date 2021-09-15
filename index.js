@@ -29,10 +29,13 @@ $(function(){
         var order_nums = $(".order-list-group-item").length;
         var msg = "";
 
+        msg += `ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n納品日：${date}\nーーーーーーーーーーー\n`;
+        /*
         msg += "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n";
         msg += `納品日：${date}`;
-        msg += "\nーーーーーーーーーーー\n";
-        
+        msg += "\nーーーーーーーーーーー\n";        
+        */
+        /*
         for (var i=1; i<order_nums+1; i++) {
             var category_price = $(`"#category${i} option:selected"`).text();
             console.log(category_price);
@@ -45,6 +48,7 @@ $(function(){
             msg += `注文${i}\nー種類：${category}\nー個数：${amount}\nー単価：${price}`;
             msg += "ーーーーーーーーーーー";
         }
+        */
         //send_text(msg.replace(/\t/g, ""));
         send_text(msg);
         return false;
