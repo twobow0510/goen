@@ -14,7 +14,8 @@ liff
     if (!liff.isInClient() && !liff.isLoggedIn()) {
         window.alert("LINEアカウントにログインしてください。");
         //liff.login({redirectUri: location.href});
-        liff.login({redirectUri: "https://twobow0510.github.io/goen/"});
+        //liff.login({redirectUri: "https://twobow0510.github.io/goen/"});
+        liff.login({redirectUri: "https://secure-oasis-14627.herokuapp.com/"});
     }
     })
     .catch((err) => {
