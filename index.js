@@ -37,15 +37,16 @@ $(function(){
         
         for (var i=1; i<order_nums+1; i++) {
             var category_price = $(`"#category${i} option:selected"`).text();
-            console.log(category_price);
+            //console.log(category_price);
             var category_price_array = category_price.split(" - ");
             var category = category_price_array[0];
             var price = category_price_array[1];
-            console.log(price);
+            //console.log(price);
             var amount = $(`"#amount${i} option:selected"`).val();
-            
+            /*
             msg += `注文${i}\nー種類：${category}\nー個数：${amount}\nー単価：${price}\n`;
             msg += "ーーーーーーーーーーー";
+            */
         }
         
         //send_text(msg.replace(/\t/g, ""));
