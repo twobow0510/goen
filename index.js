@@ -29,7 +29,7 @@ $(function(){
         var order_nums = $(".order-list-group-item").length;
         //var msg = "";
 
-        var msg1 += `ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n納品日：${date}\nーーーーーーーーーーー\n`;
+        var msg1 = `ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n納品日：${date}\nーーーーーーーーーーー\n`;
         /*
         msg += "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n";
         msg += `"納品日：${date}""`;
@@ -45,7 +45,7 @@ $(function(){
             //console.log(price);
             var amount = $(`"#amount${i} option:selected"`).val();
             
-            var msg2 += `注文${i}\nー種類：${category}\nー個数：${amount}\nー単価：${price}\nーーーーーーーーーーー`;
+            var msg2 = `注文${i}\nー種類：${category}\nー個数：${amount}\nー単価：${price}\nーーーーーーーーーーー`;
             msg_array.push(msg2);
         }
         
