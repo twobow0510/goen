@@ -32,7 +32,7 @@ $(function(){
         //msg += `ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n納品日：${date}\nーーーーーーーーーーー\n`;
         
         msg += "ご注文内容\n＝＝＝＝＝＝＝＝＝＝＝\n";
-        msg += `納品日：${date}`;
+        msg += `"納品日：${date}""`;
         msg += "\nーーーーーーーーーーー\n";        
         
         for (var i=1; i<order_nums+1; i++) {
@@ -43,10 +43,10 @@ $(function(){
             var price = category_price_array[1];
             //console.log(price);
             var amount = $(`"#amount${i} option:selected"`).val();
-            /*
-            msg += `注文${i}\nー種類：${category}\nー個数：${amount}\nー単価：${price}\n`;
+            
+            msg += `"注文${i}\nー種類：${category}\nー個数：${amount}\nー単価：${price}\n"`;
             msg += "ーーーーーーーーーーー";
-            */
+            
         }
         
         //send_text(msg.replace(/\t/g, ""));
