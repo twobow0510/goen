@@ -41,14 +41,14 @@ $(function(){
             var price = category_price_array[1];
             console.log(price);
             var amount = $(`"#amount${i} option:selected"`).val();
-            /*
+            
             msg += `注文${i}
             ー種類：${category}
             ー個数：${amount}
             ー単価：${price}
             ーーーーーーーーーーー
             `;
-            */
+            
         }
         
         //window.alert(msg);
