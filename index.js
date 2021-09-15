@@ -24,7 +24,7 @@ $(function(){
 
     //送信
     //$('form').submit(function() {
-    $("#form").click(function() {
+    $("#submit").click(function() {
         var date = $("#date").val();
         var order_nums = $(".order-list-group-item").length;
         var msg = "";
