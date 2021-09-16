@@ -9,11 +9,11 @@ $(function(){
             $(".order-list-group-item").each(function(index) {
                 $(this).find("p:first-child").text("注文" + (index + 1));
 
-                $(this).find("p.category").attr({"id": `category${index+1}`});
+                $(this).find("p.category").attr({"class": `category${index+1}`});
                 $(this).find("p.category label").attr({"for": `category${index+1}`});
                 $(this).find("p.category select").attr({"name": `category${index+1}`});
 
-                $(this).find("p.amount").attr({"id": `amount${index+1}`});
+                $(this).find("p.amount").attr({"class": `amount${index+1}`});
                 $(this).find("p.amount label").attr({"for": `amount${index+1}`});
                 $(this).find("p.amount select").attr({"name": `amount${index+1}`});
             });
